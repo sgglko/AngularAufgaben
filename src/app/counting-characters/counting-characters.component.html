@@ -1,1 +1,4 @@
-<p>counting-characters works!</p>
+
+<label for="inputString">What is the input String?</label>
+<input id="inputString" type="text" placeholder="Enter your String!" [formControl]="inputObject" (keyup.enter)="onSubmit()">
+

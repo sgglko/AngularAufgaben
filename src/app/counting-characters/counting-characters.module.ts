@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { CountingCharactersRoutingModule } from './counting-characters-routing.module';
 import { CountingCharactersComponent } from './counting-characters.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { CountingCharactersComponent } from './counting-characters.component';
   ],
   imports: [
     CommonModule,
-    CountingCharactersRoutingModule
+    CountingCharactersRoutingModule,
+    ReactiveFormsModule
   ]
 })
 export class CountingCharactersModule { }

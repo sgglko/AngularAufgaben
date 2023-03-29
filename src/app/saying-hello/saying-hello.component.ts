@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import {FormBuilder, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-saying-hello',
@@ -8,10 +8,14 @@ import { FormControl } from '@angular/forms';
 
 })
 export class SayingHelloComponent {
-inputName = new FormControl("");
+
+  inputName = new FormControl();
 
 
-sayHello():void {
-  alert("Hello," + this.inputName.value + ", nice to meet you!");
-}
+
+  onSubmit(): void {
+  alert("Hello " + this.inputName.value + ", nice to meet you!");
+  }
+
+
 }
