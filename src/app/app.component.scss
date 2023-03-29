@@ -1,0 +1,12 @@
+.navContainer {
+  display: flex;
+
+}
+
+.navContainer > a {
+  background-color: gray;
+  color: blueviolet;
+  margin: 10px;
+  padding: 20px;
+  fontsize: 30px;
+}
