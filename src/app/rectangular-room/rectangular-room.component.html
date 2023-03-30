@@ -1,1 +1,63 @@
-<p>rectangular-room works!</p>
+<h1>Area Calculator</h1>
+<hr>
+<div id="switchButtonContainer">
+  <label class="switch">
+    <input type="checkbox" [formControl]="feetOrMeter" (click)="changeCalculationMethod()">
+    <span class="slider round"></span>
+  </label>
+  <span class="ArtOfCalculation" *ngIf="feetOrMeter.value == null">Calculate in meters!</span>
+  <span class="ArtOfCalculation" *ngIf="feetOrMeter.value">Calculate in feet!</span>
+  <span class="ArtOfCalculation" *ngIf="feetOrMeter.value == false">Calculate in meters!</span>
+</div>
+<div id="inputContainer">
+  <form [formGroup]="areaForm" (ngSubmit)="calculateArea()">
+    <label class="inputValidationContainer" for="inputLength">What is the length of the room in {{calculationMethod}}?
+      <div class="innerInputValidationContainer">
+        <span class="childInputLength" *ngIf="!areaForm.get('length')!.valid && areaForm.dirty" style="color: red">Enter a number</span>
+        <input
+          type="number"
+          id="inputLength"
+          class="childInputLength"
+          formControlName="length"
+        >
+      </div>
+    </label>
+  </form>
+  <form [formGroup]="areaForm" (ngSubmit)="calculateArea()">
+    <label class="inputValidationContainer" for="inputWidth">What is the width of the room in {{calculationMethod}}?
+      <div class="innerInputValidationContainer">
+        <span class="childInputWidth" *ngIf="!areaForm.get('width')!.valid && areaForm.dirty" style="color: red">Enter a number</span>
+        <input
+          type="number"
+          id="inputWidth"
+          class="childInputWidth"
+          formControlName="width"
+        >
+      </div>
+      <button type="submit" [disabled]="!areaForm.valid">Calculate</button>
+    </label>
+  </form>
+</div>
+<div class="containerOutput">
+  <span>Your Room!</span>
+  <div class="squareContainer">
+    <div class="square">
+      <span *ngIf="area == 0" class="questionMark">?</span>
+      <span *ngIf="area != 0" class="areaInSquare">{{area | number: "1.0-2"}}{{calculationMethod}}²</span>
+    </div>
+    <span id="showLengthNextToSquare">{{length | number: "1.0-2"}}{{calculationMethod}}</span>
+  </div>
+
+  <span>{{width | number: "1.0-2"}}{{calculationMethod}}</span>
+  <!--<button
+    *ngIf="feetOrMeter.value == false && feetButtonClickedTest || feetOrMeter.value == null && feetButtonClickedTest || feetOrMeter.value == false"
+    (click)="calculateInFeet();feetButtonClicked() ">
+    Convert to feet!
+  </button>
+  <button
+    *ngIf="feetOrMeter.value && meterButtonClickedTest || feetOrMeter.value == null && meterButtonClickedTest"
+    (click)="calculateInMeter(); meterButtonClicked()">
+    Convert to meter!
+  </button>-->
+
+</div>

@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: 'sayingHello', loadChildren: () => import('./saying-hello/saying-hello.module').then(m => m.SayingHelloModule) },
   //countingCharacters routes
   { path: 'countingCharacters', loadChildren: () => import('./counting-characters/counting-characters.module').then(m => m.CountingCharactersModule) },
+  //rectangularRoom routes
   { path: 'RectangularRoom', loadChildren: () => import('./rectangular-room/rectangular-room.module').then(m => m.RectangularRoomModule) },
   //page not found routes
   { path: '**', component: PageNotFoundComponent }
