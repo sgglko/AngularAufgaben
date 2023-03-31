@@ -1,2 +1,27 @@
-<button (click)="apiCall()">Api Request</button>
-<span>{{Data}}</span>
+<h1>People in Space</h1>
+<hr>
+<div class="containerButton">
+  <label>Start the Rocket to see, who is in Space right now!</label>
+  <button id="button" (click)="showPeople(); rocketStart()"
+          style="background-image: url('assets/images/red-rocket-png-5.png'); background-repeat: no-repeat; background-size: contain; border: none; width: 100px; height: 100px; background-color: white"></button>
+
+</div>
+<div class="containerPeople">
+
+  <ol>
+    <label>ISS</label>
+    <hr>
+    <li *ngFor="let x of dataISS">
+      {{x.name}}
+    </li>
+  </ol>
+
+  <ol>
+    <label>Shenzhou 15</label>
+    <hr>
+    <li *ngFor="let x of dataShenzhou15">
+      {{x.name}}
+    </li>
+  </ol>
+</div>
+

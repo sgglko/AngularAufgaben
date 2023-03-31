@@ -1,1 +1,31 @@
+.containerButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes fly-up {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-300px);
+    opacity: 0;
+  }
+}
+
+.rocketStart {
+  animation-name: fly-up;
+  animation-duration: 2s;
+  animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.containerPeople {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+}
 
