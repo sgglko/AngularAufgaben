@@ -16,6 +16,7 @@ const routes: Routes = [
   { path: 'RectangularRoom', loadChildren: () => import('./rectangular-room/rectangular-room.module').then(m => m.RectangularRoomModule) },
   // Human in Space routes
   { path: 'HumanInSpace', loadChildren: () => import('./human-in-space/human-in-space.module').then(m => m.HumanInSpaceModule) },
+  { path: 'weatherApp', loadChildren: () => import('./weather-app/weather-app.module').then(m => m.WeatherAppModule) },
   // page not found routes
   { path: '**', component: PageNotFoundComponent }
 ];
